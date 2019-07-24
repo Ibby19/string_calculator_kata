@@ -29,6 +29,10 @@ def test_random_delimiter():
 def test_newline():
     assert add("2\n4,6") == 12
 
+def test_invalid_inline():
+        with pytest.raises(ValueError):
+                sum_string_numbers('1,\n')
+
 def test_negative_numbers():
     with pytest.raises(ValueError):
         sum_string_numbers('-1,-2')
